@@ -526,6 +526,7 @@ message Dependencies {
   optional int64 unknown2 = 2;
   repeated Dependency dependency = 3;
   optional int32 unknown3 = 4;
+  repeated string split = 11;
 }
 message Dependency {
   optional string packageName = 1;
@@ -567,6 +568,7 @@ message FileMetadata {
   optional int32 fileType = 1;
   optional int32 versionCode = 2;
   optional int64 size = 3;
+  optional string name = 4;
 }
 message MagazineDetails {
   optional string parentDetailsUrl = 1;

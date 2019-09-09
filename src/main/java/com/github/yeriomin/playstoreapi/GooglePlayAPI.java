@@ -844,7 +844,7 @@ public class GooglePlayAPI {
         params.put("has_permission", "1");
         params.put("source", "android");
         params.put("device_country", this.locale.getCountry().toLowerCase());
-        params.put("lang", this.locale.getLanguage().toLowerCase());
+        params.put("lang", "zh_CN,zh_TW,en_US,ko_KR,ja_JP");
         params.put("sdk_version", String.valueOf(this.deviceInfoProvider.getSdkVersion()));
         params.put("client_sig", "38918a453d07199354f8b19af05ec6562ced5788");
         params.put("callerSig", "38918a453d07199354f8b19af05ec6562ced5788");
@@ -866,7 +866,7 @@ public class GooglePlayAPI {
         if (this.gsfId != null && this.gsfId.length() > 0) {
             headers.put("X-DFE-Device-Id", this.gsfId);
         }
-        headers.put("Accept-Language", this.locale.toString().replace("_", "-"));
+        headers.put("Accept-Language", "en-US,ja-JP,zh-CN,zh-TW,ko-KR");
         // This is a base64-encoded EncodedTargets protobuf message
         // toc request returns available targets in the Experiments field,
         // but supported targets are AFAIK static for each build of the play store app
@@ -875,7 +875,7 @@ public class GooglePlayAPI {
         headers.put("X-DFE-Client-Id", "am-android-google");
         headers.put("X-DFE-Network-Type", "4");
         headers.put("X-DFE-Content-Filters", "");
-        headers.put("X-DFE-UserLanguages", this.locale.toString());
+        headers.put("X-DFE-UserLanguages", "en_US,ja_JP,zh_CN,zh_TW,ko_KR");
         headers.put("X-DFE-Request-Params", "timeoutMs=30000");
         if (null != deviceCheckinConsistencyToken && deviceCheckinConsistencyToken.length() > 0) {
             headers.put("X-DFE-Device-Checkin-Consistency-Token", deviceCheckinConsistencyToken);
